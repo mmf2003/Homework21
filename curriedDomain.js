@@ -15,7 +15,11 @@
 */
 
 function curriedDomain(protocol) {
-  // code
+    return function (domainName) {
+        return function (tld) {
+            return `${protocol}://${domainName}.${tld}`;
+        };
+    };
 }
 
 // Приклад використання
