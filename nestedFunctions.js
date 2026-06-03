@@ -13,15 +13,18 @@ deepInnerFunction повинна виконувати операцію множ�
 */
 
 function outerFunction(arg1) {
-  function innerFunction(arg2) {
-    function deepInnerFunction(arg3) {
-      // code
+
+    function innerFunction(arg2) {
+
+        function deepInnerFunction(arg3) {
+            
+            return arg1 * arg2 * arg3;
+        }
+
+        return deepInnerFunction;
     }
 
-    // code
-  }
-
-  // code
+    return innerFunction;
 }
 
 // const result = outerFunction(2)(3)(4)
