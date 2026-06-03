@@ -1,5 +1,6 @@
 import { curriedAdd } from "./curriedAdd.js";
 import { curriedDomain } from "./curriedDomain.js";
+import { originalFunction, modifyFunction } from "./modifyFunction.js";
 
 
 
@@ -34,3 +35,31 @@ runTest(
     curriedDomain("https")("example")("com"),
     "https://example.com"
 );
+
+const modifiedFunc =
+    modifyFunction(originalFunction, 3);
+
+console.log(
+    originalFunction(4)
+);
+
+console.log(
+    modifiedFunc(4)
+);
+
+function testModifiedFunc() {
+    const modifiedFunc =
+    modifyFunction(originalFunction, 3);
+
+    const result = modifiedFunc(4);
+
+    if (result === 48) {
+        console.log("Test passed ✅");
+    } else {
+        console.log("Test failed ❌");
+        console.log("Expected: 48");
+        console.log("Received:", result);
+    }
+}
+
+console.log(testModifiedFunc());
