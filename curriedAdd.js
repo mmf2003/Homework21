@@ -15,7 +15,11 @@
 */
 
 function curriedAdd(a) {
-  // code
+    return function (b) {
+        return function (c) {
+            return a + b + c;
+        };
+    };
 }
 
 // Приклад використання
